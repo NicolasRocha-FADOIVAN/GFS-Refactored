@@ -1,0 +1,81 @@
+<?php
+
+include 'config.php';
+include 'system/productSys.php';
+
+session_start();
+
+if(isset($_POST['searchProduct'])){
+    $search = $conn->real_escape_string($_POST['searchBar']);
+    header("Location: index.php?route=search&search=" . $search);
+}
+
+?>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Bem vindo a pagina inicial</h1>
+
+    <form action="" method="POST">
+        <input type="text" name="searchBar">
+        <button type="submit" name="searchProduct">Pesquisar</button>
+    </form>
+
+    <a href="index.php?route=register">Cadastro</a>
+    <a href="index.php?route=login">Login</a>
+    <a href="index.php?route=account">Editar dados</a>
+    <a href="index.php?route=cart">Carrinho</a>
+    <a href="index.php?route=adminpanel">Ver Produtos</a>
+    
+
+    <ul>
+        <?php foreach(catalogProduct($conn) as $list): ?>
+        <li>
+            <a href="index.php?route=product&idproduto=<?php echo $list[0]; ?>">
+            <?php print_r($list[1]); ?>
+        </li>
+        <?php endforeach ?>
+    </ul>
+
+    <?php echo $_SESSION['name'];?>, Seu safado
+
+</body>
+</html>
+
+            <!-- <div class="produtos">
+                <img src="view/tela-principal/assets/placa-de-video-galax-geforce-rtx-3060-1-click-oc-15-gbps-12gb-gddr6-ray-tracing-dlss-36nol7md1voc_1614253646_m.jpg"
+                    class="image-produtos" alt="Placa de Vídeo Galax RTX 3060 12GB OC" />
+                <p class="paragrafo"><b>Placa de Vídeo RTX 3060 1-Click OC Galax NVIDIA GeForce, 12GB GDDR6, LHR, DLSS, Ray Tracing</b></p>
+                <p class="preço"><b>R$ 1.639,99</b></p>
+                <button class="botao">Comprar</button>
+            </div>
+    
+            <div class="produtos">
+                <img src="view/tela-principal/assets/gabinete-gamer-rise-mode-galaxy-glass-standard-white-10-fans-argb-rm-ga-ggsw-argb_1685731687_m.jpg"
+                    class="image-produtos" alt="Gabinete Gamer Rise Mode Galaxy Glass Standard Mid Tower Branco com 10 Fans ARGB" />
+                <p class="paragrafo"><b>Gabinete Gamer Rise Mode Galaxy Glass Standard, Mid Tower, ARGB, ATX, Lateral...</b></p> 
+                <p class="preço"><b>R$ 519,90</b></p>
+                <button class="botao">Comprar</button>
+            </div>
+    
+            <div class="produtos">
+                <img src="view/tela-principal/assets/monitor-gamer-lg-ultragear-lg-34-curvo-led-wqhd-ultrawide-160hz-1ms-displayport-e-hdmi-amd-freesync-premium-hdr10-99-srgb-34gp63a-b_1717591886_m.jpg"
+                    class="image-produtos" alt="Monitor Gamer Curvo LG UltraGear 34 polegadas UltraWide 160Hz WQHD" />
+                <p class="paragrafo"><b>Monitor Gamer Curvo LG UltraGear LG 34", UltraWide, 160Hz, WQHD, 1ms, DisplayPort...</b></p>
+                <p class="preço"><b>R$ 1.927,99</b></p>
+                <button class="botao">Comprar</button>
+            </div>
+    
+            <div class="produtos">
+                <img src="view/tela-principal/assets/teclado-optico-mecanico-gamer-redragon-broadsword-pro-rgb-switch-redragon-blue-abnt-k588-rgb_1602177625_m.jpg"
+                    class="image-produtos" alt="Teclado Óptico-Mecânico Gamer Redragon BroadSword Pro RGB Switch Blue" />
+                <p class="paragrafo"><b>Teclado Óptico-Mecânico Gamer Redragon BroadSword Pro RGB, Switch Redragon Blue</b></p>
+                <p class="preço"><b>R$ 359,99</b></p>
+                <button class="botao">Comprar</button>
+            </div> -->
