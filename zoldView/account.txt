@@ -1,0 +1,28 @@
+<?php
+
+include 'controller/accountController.php';
+
+?>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form action="" method="POST">
+        <input type="text" name="name" value="<?php $user["nomecompleto_cliente"] ?>">         <br>
+        <input type="tel" name="phoneNumber" value="<?php $user["telefone_cliente"] ?>">      <br>
+        <input type="text" name="address" value="<?php $user["endereco_cliente"] ?>">      <br>
+        <input type="email" name="email" value="<?php $user["email_cliente"] ?>">       <br>
+        <input type="password" name="password" value="<?php $user["senha_cliente"] ?>">     <br>
+        <button type="submit" name="changeData">Atualizar Dados</button>
+        <button type="submit" name="logout">Logout</button>
+        <button type="submit" name="deleteAccount">Deletar Conta</button>
+    </form>
+
+
+</body>
+</html>
