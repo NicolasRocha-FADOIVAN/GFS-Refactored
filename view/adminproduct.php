@@ -2,16 +2,7 @@
 
 #INCLUI CONFIG PARA PEGAR A VARIÁVEL DA CONEXÃO E USA-LA COMO PARAMETRO NA FUNÇÃO REGISTER
 
-include 'config.php';
-include 'system/adminSys.php';
-
-if(isset($_POST['manageProducts'])){
-    manageProduct($conn);
-}
-
-if(isset($_POST['deleteProducts'])){
-    deleteProduct($conn);
-}
+include 'controller/adminController.php';
 
 ?>
 
@@ -24,9 +15,26 @@ if(isset($_POST['deleteProducts'])){
 </head>
 <body>
     <form action="" method="POST">
-        <input type="text" name="name">         <br>
-        <button type="submit" name="manageProducts">Criar Conta</button>
-        <button type="submit" name="deleteProducts">Deletar</button>
+
+    <div>
+        <input type="text" name="name" placeholder="Nome do produto">
+    </div>
+
+    <div>
+        <input type="text" name="description" placeholder="Descrição">
+    </div>
+
+    <div>
+        <input type="number" name="price" placeholder="Preço">
+    </div>
+
+    <div>
+        <input type="text" name="img" placeholder="Imagem produto">
+    </div>
+
+    <button type="submit" name="manageProduct">Adicionar produto</button>
+    <button type="submit" name="deleteProduct">Deletar produto</button>
+
     </form>
 </body>
 </html>

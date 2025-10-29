@@ -69,22 +69,18 @@ function changeData($conn, $values) {
     }
 }
 
-function deleteAccount($conn) {
+function deleteAccount($conn, $conditions) {
     #VERIFICA SE EXISTE ALGUM ID NESSA SESSÃO
     if(isset($_SESSION['id'])) {
         #CRIA UMA VARIAVEL QUE RECEBE O VALOR DE ID DA SESSÃO
         $id = $_SESSION['id'];
 
         #CRIA UM CÓDIGO SQL PARA DELETAR A LINHA DO USUÁRIO PELO ID
-        $sql_code = "DELETE FROM clientes WHERE id_cliente = $id";
+        $sql_code = "DELETE FROM clientes WHERE $conditions[0]";
 
         #UTILIZA O QUERY PARA EXECUTAR O CÓDIGO ARMAZENANDO NA VARIÁVEL RESULT
         $result = $conn->query($sql_code);
 
         #VERIFICA SE ALGUM RESULTADO É RETORNADO DA VARIÁVEL RESULT
-        if(isset($result)) {
-            #CHAMA A FUNÇÃO LOGOUT
-
-        }
     }
 }

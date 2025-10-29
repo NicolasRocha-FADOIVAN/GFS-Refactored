@@ -21,10 +21,6 @@ include 'controller/accountController.php';
         </div>
 
         <div>
-            <input type="tel" name="phoneNumber" placeholder="Telefone" value="<?php echo $user['telefone_cliente']; ?>">
-        </div>
-
-        <div>
             <input type="email" name="email" placeholder="Email" value="<?php echo $user['email_cliente']; ?>">
         </div>
 

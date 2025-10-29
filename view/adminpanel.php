@@ -2,12 +2,7 @@
 
 #INCLUI CONFIG PARA PEGAR A VARIÁVEL DA CONEXÃO E USA-LA COMO PARAMETRO NA FUNÇÃO LIST
 
-include 'config.php';
-include 'system/adminSys.php';
-
-if(isset($_POST['delete'])){
-    deleteProduct($conn);
-}
+include 'controller/adminController.php';
 
 ?>
 

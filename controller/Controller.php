@@ -1,6 +1,7 @@
 <?php
 
 include 'model/accountModel.php';
+include 'model/adminModel.php';
 
 #USADO PARA FUNÇÕES CREATE
 function implodeArray($conn, $data, $functionModel) {

@@ -8,7 +8,6 @@ if(isset($_POST['register'])){
 
         "nomecompleto_cliente" => $conn->real_escape_string($_POST['name']),
         "cpf_cliente" => $conn->real_escape_string($_POST['CPF']),
-        "telefone_cliente" => $conn->real_escape_string($_POST['phoneNumber']),
         "email_cliente" => $conn->real_escape_string($_POST['email']),
         "senha_cliente" => $conn->real_escape_string($_POST['password'])
 
@@ -53,7 +52,6 @@ if(isset($_POST['changeData'])){
     $data = [
 
         "nomecompleto_cliente" => $name = $conn->real_escape_string($_POST['name']),
-        "telefone_cliente" => $conn->real_escape_string($_POST['phoneNumber']),
         "email_cliente" => $conn->real_escape_string($_POST['email']),
         "senha_cliente" => $conn->real_escape_string($_POST['password'])
     ];
@@ -64,13 +62,18 @@ if(isset($_POST['changeData'])){
 
 if(isset($_POST['deleteAccount'])){
 
-    $data = [
+    $id = $_SESSION['id'];
 
-        "email" => $conn->real_escape_string($_POST['email']),
-        "password" => $conn->real_escape_string($_POST['password'])
+    if(isset($id)){
+        $data = [
 
-    ];
+            "id_cliente" => $id,
 
-    $functionModel = 'deleteAccount';
+        ];
 
+        $functionModel = 'deleteAccount';
+        implodeConditions($conn, $data, $functionModel);
+        session_destroy();
+        header("Location: index.php?route=home");
+    }
 }
