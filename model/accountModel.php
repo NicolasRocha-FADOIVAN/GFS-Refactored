@@ -50,16 +50,16 @@ function getData($conn, $id) {
     return $user;
 }
 
-function changeData($conn, $values) {
+function changeData($conn, $values, $conditions) {
 
     #VERIFICA SE EXISTE ALGUM ID NESSA SESSÃO
     if(isset($_SESSION['id'])) {
 
         #CRIA UMA VARIÁVEL PARA ARMAZENAR ESSE ID
-        $id = $_SESSION['id'];
+        var_dump($conditions);
         var_dump($values);
         #CRIA UM CÓDIGO SQL PARA SUBSTITUIR OS VALORES DO USUÁRIO
-        $sql_code = "UPDATE clientes SET $values WHERE id_cliente = '$id'";
+        $sql_code = "UPDATE clientes SET $values WHERE $conditions[0]";
 
         #UTILIZA O QUERY PARA EXECUTAR O CÓDIGO ARMAZENANDO NA VARIÁVEL RESULT
         $result = $conn->query($sql_code);

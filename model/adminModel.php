@@ -32,11 +32,10 @@ function listProducts($conn) {
     }
 }
 
-function updateProduct($conn, $values) {
+function updateProduct($conn, $values, $conditions) {
     #RECEBE OS VALORES DIGITADOS NO FORMULÁRIO DE PRODUTO E COLOCA ELES EM VARIÁVEIS
-    $id = $_GET['idproduto'];
     #CRIA UM CÓDIGO SQL PARA ATUALIZAR A TABELA COM OS VALORES DOS PARAMETROS ONDE O ID FOR IGUAL AO PARAMETRO ID
-    $sql_code = "UPDATE produtos SET $values WHERE id_produto = '$id'";
+    $sql_code = "UPDATE produtos SET $values WHERE $conditions[0]";
 
     #UTILIZA O QUERY PARA EXECUTAR O CÓDIGO ARMAZENANDO NA VARIÁVEL RESULT
     $result = $conn->query($sql_code);

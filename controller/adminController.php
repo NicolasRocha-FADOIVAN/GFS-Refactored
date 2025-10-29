@@ -4,7 +4,9 @@ include 'controller/Controller.php';
 
 if(isset($_POST['manageProduct'])){
 
-    $data = [
+    $id = $_GET['idproduto'];
+
+    $dataValues = [
 
         "nome_produto" => $conn->real_escape_string($_POST['name']),
         "desc_produto" => $conn->real_escape_string($_POST['description']),
@@ -13,11 +15,17 @@ if(isset($_POST['manageProduct'])){
 
     ];
 
+    $dataConditions = [
 
-    if(isset($_GET['idproduto'])) {
+        "id_produto" => $id,
+    
+    ];
+
+
+    if(isset($id)) {
 
         $functionModel = 'updateProduct';
-        implodeValues($conn, $data, $functionModel);
+        implodeConValues($conn, $dataValues, $dataConditions, $functionModel);
 
     } else {
 

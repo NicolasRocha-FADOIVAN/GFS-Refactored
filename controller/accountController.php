@@ -53,15 +53,21 @@ if(isset($_SESSION["id"])) {
 
 if(isset($_POST['changeData'])){
 
-    $data = [
+    $dataValues = [
 
         "nomecompleto_cliente" => $name = $conn->real_escape_string($_POST['name']),
         "email_cliente" => $conn->real_escape_string($_POST['email']),
         "senha_cliente" => $conn->real_escape_string($_POST['password'])
     ];
 
+    $dataConditions = [
+
+        "id_cliente" => $_SESSION['id'],
+
+    ];
+
     $functionModel = 'changeData';
-    implodeValues($conn, $data, $functionModel);
+    implodeConValues($conn, $dataValues, $dataConditions, $functionModel);
 }
 
 if(isset($_POST['deleteAccount'])){
