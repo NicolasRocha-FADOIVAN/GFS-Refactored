@@ -25,7 +25,7 @@ include 'controller/adminController.php';
     </div>
 
     <div>
-        <input type="number" name="price" placeholder="Preço">
+        <input type="number" step="any" name="price" placeholder="Preço">
     </div>
 
     <div>

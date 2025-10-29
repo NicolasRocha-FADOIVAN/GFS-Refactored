@@ -46,7 +46,7 @@ include 'controller/accountController.php';
                 <input type="password" name="password" placeholder="Senha">
             </div>
 
-            <button class="login-btn" type="submit" name="login">Criar Conta</button>
+            <button class="login-btn" type="submit" name="register">Criar Conta</button>
 
         </form>
         <a class="" href="index.php?route=login">Login</a>
