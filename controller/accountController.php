@@ -2,6 +2,8 @@
 
 include 'controller/Controller.php';
 
+#1 Este bloco verifica se o formulário de registro foi enviado. (botão register foi pressionado).
+
 if(isset($_POST['register'])){
 
     $data = [
@@ -16,6 +18,8 @@ if(isset($_POST['register'])){
     $functionModel = 'register';
     implodeArray($conn, $data, $functionModel);
 }
+
+
 
 if(isset($_POST['login'])){
 
@@ -76,4 +80,5 @@ if(isset($_POST['deleteAccount'])){
         session_destroy();
         header("Location: index.php?route=home");
     }
+
 }
