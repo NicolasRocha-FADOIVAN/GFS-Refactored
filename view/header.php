@@ -1,14 +1,9 @@
 <?php
 
-include 'config.php';
-include 'system/productSys.php';
+include 'controller/productController.php';
+include 'view/components/headerComponents.php';
 
 session_start();
-
-if(isset($_POST['search'])){
-    searchProduct($conn);
-    header("Location: index.php?route=search");
-}
 
 ?>
 
@@ -17,20 +12,27 @@ if(isset($_POST['search'])){
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <link rel="stylesheet" href="view/css/header.css" />
 </head>
 <body>
-
-    <form action="" method="POST">
-        <input type="text" name="searchBar">
-        <button type="submit" name="search">Pesquisar</button>
-    </form>
-
-    <a href="index.php?route=register">Cadastro</a>
-    <a href="index.php?route=login">Login</a>
-    <a href="index.php?route=account">Editar dados</a>
-    <a href="index.php?route=cart">Carrinho</a>
-    <a href="index.php?route=adminpanel">Ver Produtos</a>
-
+    <header>
+        <div class="menu-icon">☰</div>
+        <div class="logo">
+            <img src="view/assets/EDG.png" alt="Logo Electronic Desire Gaming" />
+        </div>
+        <form action="" method="POST" class="search-bar">
+            <input type="text" name="searchBar" placeholder="Busque seus produtos aqui!" />
+            <button type="submit" name="searchProduct">➤➤</button>
+        </form>
+        <div class="user-options">
+            <span class="icons">
+                <span> <?php profile() ?> </span>
+                <span title="Acessibilidade"><img class="acessibilidade" src="view/assets/header/acessibilidade.png" alt="Ícone de acessibilidade" /></span>
+                <span title="Ajuda"><img class="ajuda" src="view/assets/header/suporte.png" alt="Ícone de ajuda/suporte" /></span>
+                <span title="Favoritos"><img class="favorito" src="view/assets/header/favoritos.png" alt="Ícone de favoritos" /></span>
+                <span title="Carrinho"><img class="carrinho" src="view/assets/header/carrinho.png" alt="Ícone do carrinho de compras" /></span>
+            </span>
+        </div>
+    </header>
 </body> 
 </html>

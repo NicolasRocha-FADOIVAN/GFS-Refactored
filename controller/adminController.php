@@ -30,7 +30,7 @@ if(isset($_POST['manageProduct'])){
     } else {
 
         $functionModel = 'addProduct';
-        implodeArray($conn, $data, $functionModel);
+        implodeArray($conn, $dataValues, $functionModel);
     
     }
 }

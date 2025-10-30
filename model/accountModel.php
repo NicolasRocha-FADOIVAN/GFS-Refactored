@@ -2,8 +2,6 @@
 
 include 'config.php';
 
-session_start();
-
 function register($conn, $columns, $rows) {
 
     #CRIA UM CÓDIGO SQL PARA INSERIR OS VALORES NA TABELA DE USUARIOS

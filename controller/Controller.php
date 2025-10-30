@@ -35,7 +35,7 @@ function implodeValues($conn, $data, $functionModel) {
     $valuesArray = [];
 
     foreach ($data as $column => $row):
-        $valuesArray[] = $column . " = " . "'$row'";
+        $values[] = $column . " = " . "'$row'";
     endforeach;
 
     $values = implode(", ", $valuesArray);
@@ -46,7 +46,7 @@ function implodeValues($conn, $data, $functionModel) {
 function implodeConValues($conn, $dataValues, $dataConditions, $functionModel) {
 
     $conditions = [];
-    $valuesArray = [];
+    $values = [];
 
     foreach ($dataValues as $column => $row):
         $valuesArray[] = $column . " = " . "'$row'";

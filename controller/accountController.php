@@ -1,6 +1,6 @@
 <?php
 
-include 'controller/Controller.php';
+include_once 'controller/Controller.php';
 
 #1 Este bloco verifica se o formulário de registro foi enviado. (botão register foi pressionado).
 
