@@ -1,4 +1,5 @@
 <?php
+session_start();
 
 include_once 'controller/productController.php';
 include_once 'controller/accountController.php';
@@ -17,8 +18,8 @@ include_once 'components/headerComponents.php';
 <body>
     <header>
         <div class="menu-icon">☰</div>
-        <div class="logo">
-            <img src="view/assets/EDG.png" alt="Logo Electronic Desire Gaming" />
+        <div class="header-logo">
+            <a href="index.php?route=home"><img src="view/assets/EDG.png" alt="Logo Electronic Desire Gaming" /></a>
         </div>
         <form action="" method="POST" class="search-bar">
             <input type="text" name="searchBar" placeholder="Busque seus produtos aqui!" />

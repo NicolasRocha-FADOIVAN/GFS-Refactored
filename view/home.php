@@ -31,7 +31,7 @@ include_once 'view/components/homeComponents.php';
         <div class="produtos-card-container">
 
             <?php foreach(catalog($conn) as $list):  ?>
-            <?php products($list[1], $list[2], $list[3], $list[4]) ?>
+            <?php products($list[1], $list[3], $list[4]) ?>
             <?php endforeach ?>
             
         </div>

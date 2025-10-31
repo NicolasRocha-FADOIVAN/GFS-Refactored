@@ -15,14 +15,13 @@ if(isset($_POST['manageProduct'])){
 
     ];
 
-    $dataConditions = [
-
-        "id_produto" => $id,
-    
-    ];
-
-
     if(isset($id)) {
+
+        $dataConditions = [
+
+            "id_produto" => $id,
+        
+        ];
 
         $functionModel = 'updateProduct';
         implodeConValues($conn, $dataValues, $dataConditions, $functionModel);
@@ -30,7 +29,7 @@ if(isset($_POST['manageProduct'])){
     } else {
 
         $functionModel = 'addProduct';
-        implodeArray($conn, $data, $functionModel);
+        implodeArray($conn, $dataValues, $functionModel);
     
     }
 }
