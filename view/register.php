@@ -19,15 +19,15 @@ include_once 'controller/accountController.php';
 <body>
     <div class="register-container">
         <div class="form-box">
-            <img src="./assets/EDG.png" alt="Logo EDG+" class="logo">
-
-            <form>
-                <input type="text" placeholder="Nome" required>
-                <input type="text" placeholder="Sobrenome" required>
-                <input type="email" placeholder="Email" required>
-                <input type="text" placeholder="CPF" required>
-                <input type="password" placeholder="Senha" required>
-                <input type="password" placeholder="Confirmar Senha" required>
+            <img src="view/assets/EDG.png" alt="Logo EDG+" class="logo">
+ 
+            <form method="POST" action="">
+                <input class="form-input" type="text" placeholder="Nome" required>
+                <input class="form-input" type="text" placeholder="Sobrenome" required>
+                <input class="form-input" type="email" placeholder="Email" required>
+                <input class="form-input" type="text" placeholder="CPF" required>
+                <input class="form-input" type="password" placeholder="Senha" required>
+                <input class="form-input" type="password" placeholder="Confirmar Senha" required>
 
                 <div class="checkbox">
                     <input type="checkbox" id="termos" required>
