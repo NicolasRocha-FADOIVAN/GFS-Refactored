@@ -17,36 +17,28 @@ include_once 'controller/accountController.php';
   <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
 </head>
 <body>
-    <div class="login-page">
-        <div class="login-container">
-            <h1 class="logo">Cadastro</h1>
-            <form class="login-form" action="" method="POST">
+    <div class="register-container">
+        <div class="form-box">
+            <img src="./assets/EDG.png" alt="Logo EDG+" class="logo">
 
-                <div class="input-group">
-                    <i class="fas fa-user"></i>
-                    <input type="text" name="name" placeholder="Nome">
+            <form>
+                <input type="text" placeholder="Nome" required>
+                <input type="text" placeholder="Sobrenome" required>
+                <input type="email" placeholder="Email" required>
+                <input type="text" placeholder="CPF" required>
+                <input type="password" placeholder="Senha" required>
+                <input type="password" placeholder="Confirmar Senha" required>
+
+                <div class="checkbox">
+                    <input type="checkbox" id="termos" required>
+                    <label for="termos">Eu li e aceito os <a href="#">Termos de uso e Privacidade</a></label>
                 </div>
 
-                <div class="input-group">
-                    <i class="fas fa-id-card"></i>
-                    <input type="number" name="CPF" placeholder="CPF">
-                </div>
-
-                <div class="input-group">
-                    <i class="fas fa-envelope"></i>
-                    <input type="email" name="email" placeholder="Email">
-                </div>
-
-                <div class="input-group">
-                    <i class="fas fa-lock"></i>
-                    <input type="password" name="password" placeholder="Senha">
-                </div>
-
-                <button class="login-btn" type="submit" name="register">Criar Conta</button>
-
+                <button type="submit" name="register" class="btn-cadastrar">Cadastrar</button>
+                <button type="button" class="btn-cancelar">Cancelar</button>
             </form>
-            <a class="" href="index.php?route=login">Login</a>
         </div>
     </div>
+    <a class="" href="index.php?route=login">Login</a>
 </body>
 </html>
