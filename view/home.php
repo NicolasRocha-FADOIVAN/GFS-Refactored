@@ -1,11 +1,16 @@
 <?php
 
+<<<<<<< HEAD
 include 'view/components/homeComponents.php';
 
 if(isset($_POST['searchProduct'])){
     $search = $conn->real_escape_string($_POST['searchBar']);
     header("Location: index.php?route=search&search=" . $search);
 }
+=======
+include_once 'controller/productController.php';
+include_once 'view/components/homeComponents.php';
+>>>>>>> 9ef9d2c7d71c0f45d9d1c9a5568d83cbc03aeb91
 
 ?>
 
@@ -22,7 +27,10 @@ if(isset($_POST['searchProduct'])){
 <body>
     
     <div class="container">
+<<<<<<< HEAD
 
+=======
+>>>>>>> 9ef9d2c7d71c0f45d9d1c9a5568d83cbc03aeb91
     
         <div id="banner">
             <img src="view/assets/Banner.jpg" alt="Banner promocional Friday Black - Compre aqui!" />
@@ -35,8 +43,8 @@ if(isset($_POST['searchProduct'])){
         </div>
         <div class="produtos-card-container">
 
-            <?php foreach(catalogProduct($conn) as $list):  ?>
-            <?php products($list[1], $list[2], $list[3], $list[4]) ?>
+            <?php foreach(catalog($conn) as $list):  ?>
+            <?php products($list[1], $list[3], $list[4]) ?>
             <?php endforeach ?>
             
         </div>

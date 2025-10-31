@@ -22,6 +22,9 @@ include 'controller/adminController.php';
                 <th scope="col"></th>
                 <th scope="col">ID</th>
                 <th scope="col">Nome</th>
+                <th scope="col">Descrição</th>
+                <th scope="col">Preço</th>
+                <th scope="col">Imagem</th>
             </tr>
         </thead>
         <tbody>
@@ -30,6 +33,9 @@ include 'controller/adminController.php';
                 <td><a href="index.php?route=adminproduct&idproduto=<?php echo $list[0]; ?>">Detalhes</a></td>
                 <td><?php print_r($list[0]); ?></td>
                 <td><?php print_r($list[1]); ?></td>
+                <td><?php print_r($list[2]); ?></td>
+                <td>R$ <?php print_r($list[3]); ?></td>
+                <td><?php print_r($list[4]); ?></td>
             </tr>
             <?php endforeach ?>
         </tbody>

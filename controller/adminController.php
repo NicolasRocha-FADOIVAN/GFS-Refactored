@@ -1,6 +1,6 @@
 <?php
 
-include 'controller/Controller.php';
+include_once 'controller/Controller.php';
 
 if(isset($_POST['manageProduct'])){
 
@@ -15,14 +15,13 @@ if(isset($_POST['manageProduct'])){
 
     ];
 
-    $dataConditions = [
-
-        "id_produto" => $id,
-    
-    ];
-
-
     if(isset($id)) {
+
+        $dataConditions = [
+
+            "id_produto" => $id,
+        
+        ];
 
         $functionModel = 'updateProduct';
         implodeConValues($conn, $dataValues, $dataConditions, $functionModel);

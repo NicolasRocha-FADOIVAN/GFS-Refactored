@@ -8,13 +8,7 @@ function catalogProduct($conn) {
     $result = $conn->query($sql_code);
 
     #VERIFICA SE ALGUM RESULTADO É RETORNADO DA VARIÁVEL RESULT
-    if($result->num_rows > 0) {
-
-        #CHAMA A FUNÇÃO QUERY PRODUCT COM O PARAMETRO RESULT
-        // queryProduct($result);
-        $list = $result->fetch_all(MYSQLI_NUM);
-        return $list;
-    }
+    return queryProduct($result);
 }
 
 function searchProduct($conn) {
@@ -29,8 +23,7 @@ function searchProduct($conn) {
 
     #CHAMA A FUNÇÃO QUERY PRODUCT COM O PARAMETRO RESULT
     // queryProduct($result);
-    $list = $result->fetch_all(MYSQLI_NUM);
-    return $list;
+    return queryProduct($result);
 }
 
 function queryProduct($result) {
@@ -38,5 +31,11 @@ function queryProduct($result) {
 
 
     #RETORNA UM ARRAY COM AS INFORMAÇÕES DO RESULTADO
+    if($result->num_rows > 0) {
 
+        #CHAMA A FUNÇÃO QUERY PRODUCT COM O PARAMETRO RESULT
+        // queryProduct($result);
+        $list = $result->fetch_all(MYSQLI_NUM);
+        return $list;
+    }
 }

@@ -5,22 +5,20 @@ include 'config.php';
 function register($conn, $columns, $rows) {
 
     #CRIA UM CÓDIGO SQL PARA INSERIR OS VALORES NA TABELA DE USUARIOS
-    var_dump($columns);
-    var_dump($rows);
+
     $sql_code = "INSERT INTO clientes ($columns) VALUES ($rows)";
 
     #UTILIZA O QUERY PARA EXECUTAR O CÓDIGO ARMAZENANDO NA VARIÁVEL RESULT
     $result = $conn->query($sql_code);
 
     #REDIRECIONA PARA A TELA DE LOGIN
-    header("Location: index.php?route=home");
+    header("Location: index.php?route=login");
 }
 
 function login($conn, $conditions) {
 
     #CRIA UM CÓDIGO SQL PARA SELECIONAR OS VALORES DO USUÁRIO, VERIFICANDO SE OS VALORES DAS VARIAVEIS EXISTEM NO BANCO DE DADOS
     $sql_code = "SELECT * FROM clientes WHERE $conditions[0] AND $conditions[1]";
-    var_dump($sql_code);
     #UTILIZA O QUERY PARA EXECUTAR O CÓDIGO ARMAZENANDO NA VARIÁVEL RESULT
     $result = $conn->query($sql_code);
 
