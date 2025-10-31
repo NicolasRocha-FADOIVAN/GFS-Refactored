@@ -62,8 +62,8 @@ function implodeConValues($conn, $dataValues, $dataConditions, $functionModel) {
 
 }
 
-function getProducts($conn) {
+function getProducts($conn, $functionModel) {
 
-    return catalogProduct($conn);
+    return $functionModel($conn);
 
 }

@@ -1,7 +1,7 @@
 <?php
 
-include 'config.php';
-include 'system/productSys.php';
+
+include_once 'controller/productController.php';
 
 ?>
 
