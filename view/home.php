@@ -1,15 +1,7 @@
 <?php
 
-include 'config.php';
-include 'model/productModel.php';
-include 'view/components/homeComponents.php';
-
-session_start();
-
-if(isset($_POST['searchProduct'])){
-    $search = $conn->real_escape_string($_POST['searchBar']);
-    header("Location: index.php?route=search&search=" . $search);
-}
+include_once 'controller/productController.php';
+include_once 'view/components/homeComponents.php';
 
 ?>
 
@@ -26,25 +18,6 @@ if(isset($_POST['searchProduct'])){
 <body>
     
     <div class="container">
-        <header>
-            <div class="menu-icon">☰</div>
-            <div class="logo">
-                <img src="view/assets/EDG.png" alt="Logo Electronic Desire Gaming" />
-            </div>
-            <form action="" method="POST" class="search-bar">
-                <input type="text" name="searchBar" placeholder="Busque seus produtos aqui!" />
-                <button type="submit" name="searchProduct">➤➤</button>
-            </form>
-            <div class="user-options">
-                <span class="icons">
-                    <span> <?php profile() ?> </span>
-                    <span title="Acessibilidade"><img class="acessibilidade" src="view/assets/header/acessibilidade.png" alt="Ícone de acessibilidade" /></span>
-                    <span title="Ajuda"><img class="ajuda" src="view/assets/header/suporte.png" alt="Ícone de ajuda/suporte" /></span>
-                    <span title="Favoritos"><img class="favorito" src="view/assets/header/favoritos.png" alt="Ícone de favoritos" /></span>
-                    <span title="Carrinho"><img class="carrinho" src="view/assets/header/carrinho.png" alt="Ícone do carrinho de compras" /></span>
-                </span>
-            </div>
-        </header>
     
         <div id="banner">
             <img src="view/assets/Banner.jpg" alt="Banner promocional Friday Black - Compre aqui!" />
@@ -57,7 +30,7 @@ if(isset($_POST['searchProduct'])){
         </div>
         <div class="produtos-card-container">
 
-            <?php foreach(catalogProduct($conn) as $list):  ?>
+            <?php foreach(catalog($conn) as $list):  ?>
             <?php products($list[1], $list[2], $list[3], $list[4]) ?>
             <?php endforeach ?>
             

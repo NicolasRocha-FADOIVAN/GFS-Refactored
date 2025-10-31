@@ -2,6 +2,7 @@
 
 include 'model/accountModel.php';
 include 'model/adminModel.php';
+include 'model/productModel.php';
 
 #USADO PARA FUNÇÕES CREATE
 function implodeArray($conn, $data, $functionModel) {
@@ -58,5 +59,11 @@ function implodeConValues($conn, $dataValues, $dataConditions, $functionModel) {
 
     $values = implode(", ", $valuesArray);
     return $functionModel($conn, $values, $conditions);
+
+}
+
+function getProducts($conn) {
+
+    return catalogProduct($conn);
 
 }

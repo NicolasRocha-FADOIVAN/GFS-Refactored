@@ -1,6 +1,6 @@
 <?php
 
-include 'controller/Controller.php';
+include_once 'controller/Controller.php';
 
 if(isset($_POST['manageProduct'])){
 

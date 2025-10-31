@@ -1,5 +1,7 @@
 <?php
 
+require 'view/header.php';
+
 #CRIA VARIÁVEL QUE SERÁ USADA PARA PEGAR PARTE DA URL
 $route = $_GET['route'] ?? 'home';
 
